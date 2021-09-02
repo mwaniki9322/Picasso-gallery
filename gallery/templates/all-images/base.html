@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Moment By Moment. {{title}}</title>
+  {% else %}
+    <title> Moment By Moment. </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %}
+     <h1>Images</h1> 
+     {%endblock%}
+</body>
+</html>
