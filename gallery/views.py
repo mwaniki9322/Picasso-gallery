@@ -7,4 +7,4 @@ from django.http  import HttpResponse
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to my personal gallery')
+    return render(request,'index.html')
