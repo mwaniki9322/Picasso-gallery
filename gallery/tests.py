@@ -32,6 +32,8 @@ class CategoryTestClass(TestCase):
 
     # Testing Save Method
     def test_save_method(self):
-        self.nairobi.save_category()
+        self.hiking.save_category()
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
+
+#
