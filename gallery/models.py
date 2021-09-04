@@ -30,3 +30,5 @@ class Image(models.Model):
     location=models.ForeignKey(Locations,on_delete=models.CASCADE)
     Category=models.ForeignKey(Category,on_delete=models.CASCADE)
 
+    def save_image(self):
+        self.save()
