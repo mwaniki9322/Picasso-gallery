@@ -40,21 +40,24 @@ class CategoryTestClass(TestCase):
 
 class ImageTestClass(TestCase):
     
-    # Set up method
     def setUp(self):
-        self.image= Image(image_name='Hiking',image_description='rrr')
+        # Creating a new location and saving it
+        self.new_location = Locations(name = 'Nairobi')
+        self.new_location.save()
 
-    # Testing  instance
-    def test_instance(self):
-        self.assertTrue(isinstance(self.image,Image))
+        # Creating a new category and saving it
+        self.new_category = Category(name = 'Category')
+        self.new_category.save()
 
-    # Testing Save Method
-    def test_save_method(self):
-        self.image.save_image()
-        image = Image.objects.all()
-        self.assertTrue(len(image) > 0)
+        self.new_image= Image(image_name = 'BMW',image_description = 'Nice sports car',location = self.new_location,Category=self.new_category)
 
-    
+        self.new_image.save()
+
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Locations.objects.all().delete()
+        Category.objects.all().delete()
 
 
 
