@@ -12,6 +12,9 @@ class Locations(models.Model):
     
     def save_location(self):
         self.save()
+    
+    def delete_location(self):
+        self.delete()
 
 
 
@@ -33,4 +36,5 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
-   
+    
+        

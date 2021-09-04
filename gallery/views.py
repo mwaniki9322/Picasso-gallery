@@ -9,6 +9,3 @@ from django.http  import HttpResponse
 def welcome(request):
     return render(request,'index.html')
 
-def images(request):
-    cars='bentley'
-    return HttpResponse(cars)
