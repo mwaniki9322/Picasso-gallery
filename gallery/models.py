@@ -28,10 +28,11 @@ class Category(models.Model):
         self.save()
      
 class Image(models.Model):
+    image=models.ImageField(upload_to = 'articles/',default='SOME STRING')
     image_name=models.CharField(max_length=100)
     image_description=models.TextField(max_length=300)
     location=models.ForeignKey(Locations,on_delete=models.CASCADE)
-    Category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    category=models.ForeignKey(Category,on_delete=models.CASCADE)
 
     def save_image(self):
         self.save()
@@ -39,7 +40,11 @@ class Image(models.Model):
     @classmethod
     def display_all_images(cls):
         return cls.objects.all()
-
+        
+    @classmethod
+    def search_by_category(cls, category):
+        images = cls.objects.filter(category__name__icontains=category)
+        return images
 
     
         
