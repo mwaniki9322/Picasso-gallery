@@ -54,5 +54,7 @@ class ImageTestClass(TestCase):
         image = Image.objects.all()
         self.assertTrue(len(image) > 0)
 
+    
+
 
 
