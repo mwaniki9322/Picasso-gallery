@@ -10,4 +10,13 @@ class Images(models.Model):
         return self.image_name
 
 class Location(models.Model):
-    Location=models.TextField(max_length=100)
+    location=models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.location
+
+class tags(models.Model):
+    name = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.name
