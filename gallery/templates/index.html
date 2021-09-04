@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/styles.css">
-        <title>Landing page responsive portfolio</title>
+        <title>PICASSO GALLERY</title>
     </head>
     <body>
         <!-- OVERLAY -->
@@ -17,15 +17,14 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">Bedimcode</a>
+                    <a href="#" class="nav__logo">PICASSO</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="{% url 'welcome' %}"  class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="{% url 'images' %}" class="nav__link">Gallery</a></li>
+                        <li class="nav__item"><a href="{% url 'search_results' %}" class="nav__link">Search</a></li>
                         <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -40,12 +39,12 @@
         <main class="l-main bd-grid">
             <div class="home">
                 <div class="home__information">
-                    <span class="home__pressent anime-text">Hello, My name is</span>
-                    <h1 class="home__title anime-text">John Doe</h1>
-                    <span class="home__skill anime-text">Web Developer</span>
+                    <span class="home__pressent anime-text">Hello, Welcome To</span>
+                    <h1 class="home__title anime-text">Picasso Gallery</h1>
+                    <span class="home__skill anime-text">Personal Gallery</span>
                     
                     <div>
-                        <a href="#" class="home__button anime-text">DOWNLOAD CV</a>
+                        <a href="{% url 'images' %}"  class="home__button anime-text">Get started</a>
                     </div>
                 </div>
 
