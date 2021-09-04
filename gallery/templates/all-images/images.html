@@ -1,9 +1,18 @@
-{%extends 'all-news/base.html'%}
+{%extends 'all-images/base.html'%}
 
 {% block content %}
-{{block.super}}
 
 
+{%for image in images%}
+<p>
+    {{image.image_name}}
+</p>
+<p>
+    {{image.image_description}}
+</p>
 
-{{cars}}
+<p>{{image.location}}</p>
+
+<p>{{image.Category}}</p>
+{%endfor%}
 {% endblock %}
