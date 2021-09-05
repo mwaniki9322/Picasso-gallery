@@ -24,12 +24,12 @@
     <div class="lightbox-gallery">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Lightbox Gallery</h2>
-                <p class="text-center">Find the lightbox gallery for your project. click on any image to open gallary</p>
+                <h2 class="text-center" style="color: black;">Lightbox Gallery</h2>
+                <p class="text-center" style="color: black;">Find the lightbox gallery for your project. click on any image to open gallary</p>
             </div>
             <div class="row photos">
                 {%for image in images%}
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a></div>
+                <div class=" col-md-4"><a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a></div>
                 {%endfor%}
             </div>
         </div>
@@ -55,7 +55,7 @@
     }
 
     .lightbox-gallery {
-    background-image: linear-gradient(#4A148C, #E53935);
+
     background-repeat: no-repeat;
     color: #000;
     overflow-x: hidden
