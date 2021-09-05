@@ -51,15 +51,13 @@ Technologies used to develop this application:
 
 
 ## To Do
-* ADD CATEGORIES
 * ADD REVIEWS
 * Add custom validations to the form
 
 ### Known bugs
-* No bags reported.Raise a bug fix [here](https://github.com/mwaniki9322/Pitch-app.git)
+* No bags reported.Raise a bug fix [here](https://github.com/mwaniki9322/Picasso-gallery.git)
 
 ## Contact
 * If you wish to reach out incase of any issue you can pull request
 
 ### LICENSE
-https://raw.githubusercontent.com/mwaniki9322/Pitch-app/Master/LICENSE
