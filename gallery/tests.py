@@ -46,10 +46,10 @@ class ImageTestClass(TestCase):
         self.new_location.save()
 
         # Creating a new category and saving it
-        self.new_category = Category(name = 'Category')
+        self.new_category = Category(name = 'category')
         self.new_category.save()
 
-        self.new_image= Image(image_name = 'BMW',image_description = 'Nice sports car',location = self.new_location,Category=self.new_category)
+        self.new_image= Image(image_name = 'BMW',image_description = 'Nice sports car',location = self.new_location,category=self.new_category)
 
         self.new_image.save()
 
@@ -60,7 +60,7 @@ class ImageTestClass(TestCase):
         Category.objects.all().delete()
 
     def test_get_images(self):
-        images = Image.get_images()
+        images = Image.display_all_images()
         self.assertTrue(len(images)>0)
 
 
