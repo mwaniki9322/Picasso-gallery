@@ -29,8 +29,12 @@
             <div class="row photos">
                 {%for image in images%}
                 <div class="col-sm-4 item">
-                    <a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a></div><br>
-                    
+                    <a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a>
+                    <span>
+                        <a href="/imagee/{{image.id}}">View details</a>
+                        </span>
+                </div><br>
+                   
                 {%endfor%}
             </div>
           
