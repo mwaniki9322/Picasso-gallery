@@ -46,17 +46,12 @@
   {% if images %}
   <div class="row">
     {%for image in images%}
-    <div class="col-md-4">
-        <div class="card bg-dark text-white" style="border: none; margin-top: 20px;">
-            <img src="{{image.image.url}}" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <h5 class="card-title">{{image.image_name}}</h5>
-              <p class="card-text">{{image.image_description}}</p>
-              <p class="card-text">{{image.category}}</p>
-              <p>{{image.location}}</p>
-            </div>
-          </div>
-    </div>
+    <div class="col-sm-4 item">
+        <a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a>
+        <span>
+            <a href="/imagee/{{image.id}}">link</a>
+            </span>
+    </div><br>
     {%endfor%}
     {%endif%}
 </div>
