@@ -1,101 +1,78 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-    <title>Document</title>
-
 </head>
+
 <body>
-    <div class="nav-bar" style="height: 80px;background-color: black;">
-        <a href="#" class="nav__link">Contact</a>
-        <a href="{% url 'search_results' %}" class="nav__link">Search</a>
-        <a href="{% url 'images' %}" class="nav__link">Gallery</a>
-            <a href="{% url 'welcome' %}"  class="nav__link">Home</a>    
-    </div>
-
-
-
-    <div class="lightbox-gallery">
+    <div class="photo-gallery">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center" style="color: black;">Lightbox Gallery</h2>
-                <p class="text-center" style="color: black;">Find the lightbox gallery for your project. click on any image to open gallary</p>
+                <h2 class="text-center">Lightbox Gallery</h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <div class="row photos">
                 {%for image in images%}
-                <div class=" col-md-4"><a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a></div>
+                <div class="col-md-4 item"><a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a></div>
                 {%endfor%}
             </div>
+          
         </div>
-    </div>  
-   
-    
-    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
+
 </html>
-
 <style>
-    a{
-        float: right;
-        margin-right: 20px;
-        margin-top: 30px;
-        color: white;
-        text-decoration: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 20px;
-    }
-    a:hover{
-        color: red;
-    }
-
-    .lightbox-gallery {
-
-    background-repeat: no-repeat;
-    color: #000;
-    overflow-x: hidden
+    .photo-gallery {
+  color:#313437;
+  background-color:#fff;
 }
 
-.lightbox-gallery p {
-    color: #fff
+.photo-gallery p {
+  color:#7d8285;
 }
 
-.lightbox-gallery h2 {
-    font-weight: bold;
-    margin-bottom: 40px;
-    padding-top: 40px;
-    color: #fff
+.photo-gallery h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
 }
 
 @media (max-width:767px) {
-    .lightbox-gallery h2 {
-        margin-bottom: 25px;
-        padding-top: 25px;
-        font-size: 24px
-    }
+  .photo-gallery h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
 }
 
-.lightbox-gallery .intro {
-    font-size: 16px;
-    max-width: 500px;
-    margin: 0 auto 40px
+.photo-gallery .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto 40px;
 }
 
-.lightbox-gallery .intro p {
-    margin-bottom: 0
+.photo-gallery .intro p {
+  margin-bottom:0;
 }
 
-.lightbox-gallery .photos {
-    padding-bottom: 20px
+.photo-gallery .photos {
+  padding-bottom:20px;
 }
 
-.lightbox-gallery .item {
-    padding-bottom: 30px
+.photo-gallery .item {
+  padding-bottom:30px;
 }
+
 
 </style>
