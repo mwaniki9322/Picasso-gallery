@@ -5,18 +5,16 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>Moment By Moment. {{title}}</title>
+  <title>Picasso Gallery {{title}}</title>
   {% else %}
-    <title> Moment By Moment. </title>
+    <title> Picasso Gallery </title>
   {% endif %}
 
   {% block styles %}
   {% bootstrap_css %}
 {% endblock %}
 
-{%block navbar%}
-{%include 'navbar.html'%}
-{%endblock%}
+
 </head>
 <body>
     {% block content %}

@@ -1,10 +1,53 @@
 {%extends 'all-images/base.html'%} 
 {% block content %}
+
+{%load bootstrap4%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classi Responsive Navbar</title>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Picasso Gallery</label>
+        <ul>
+            <li><a href="{%url 'welcome'%}">Home</a></li>
+            <li><a href="{%url 'images'%}">Gallery</a></li>
+            <li><a href="{%url 'search_results'%}">Search</a></li>
+            <li><a href="">Contact</a></li>
+          
+        </ul>
+    </nav>
+    {%block navbar%}
+{%include 'navbar.html'%}
+{%endblock%}
 <div class="container">
 
   <div class="row">
     {% if images%}
-      <h2>Found {{ articles|length }} of searched term {{message}}</h2>
+      <h2>Found {{ imageslength }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 images for the search term {{message}}</h2>
     {% endif %}
@@ -14,12 +57,141 @@
   <div class="row">
 
   {% if images %}
-    {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image.image_description}}</h1>
-      </div>
-    {% endfor %}
-  {% endif %}
-  </div>
+  <div class="row">
+    {%for image in images%}
+    <div class="col-md-4">
+        <div class="card bg-dark text-white" style="border: none; margin-top: 20px;">
+            <img src="{{image.image.url}}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">{{image.image_name}}</h5>
+              <p class="card-text">{{image.image_description}}</p>
+              <p class="card-text">{{image.category}}</p>
+              <p>{{image.location}}</p>
+            </div>
+          </div>
+    </div>
+    {%endfor%}
+    {%endif%}
 </div>
+
+<style>
+
+  /*--------------------------*/
+  /*----- CSS RESET -----*/
+  /*--------------------------*/
+  * {
+      vertical-align: baseline;
+      font-weight: inherit;
+      font-family: inherit;
+      font-style: inherit;
+      font-size: 100%;
+      border: 0 none;
+      outline: 0;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+  }
+  
+  body { font-family:Arial, Helvetica, sans-serif }
+      nav { 
+          background: black; 
+          height: 80px; 
+          width: 100%; 
+      }
+          label.logo{ 
+              color: white; 
+              font-size: 35px; 
+              line-height: 80px; 
+              padding:0 100px; 
+              font-weight: bold; 
+          }
+          nav ul{ 
+              float: right; 
+              margin-right:20px; 
+          }
+              nav ul li{ 
+                  display: inline-block; 
+                  line-height:80px;
+                  margin: 0 5px; 
+              }
+                  nav ul li a{
+                      color: white;
+                      font-size: 17px;
+                      padding: 7px 13px;
+                      border-radius: 3px;
+                  }
+                      a:hover{
+                          text-decoration: underline;
+                          color: red;
+                      }
+      .checkbtn{
+          font-size: 30px;
+          color: white;
+          float: right;
+          line-height: 80px;
+          margin-right: 40px;
+          cursor: pointer;
+          display: none; 
+      }
+          #check{
+             display: none; 
+          }
+  
+  /*--------------------------*/
+  /*----- MEDIA QUERRY -----*/
+  /*--------------------------*/
+  
+  @media (max-width: 952px){
+      label.logo{
+          font-size: 30px;
+          padding-left: 50px;
+      }
+      nav ul li a{
+          font-size: 16px;
+      }
+  }
+  
+  @media (max-width: 858px){
+      .checkbtn{
+          display: block; 
+      }
+      ul{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 80px;
+          left: -100%;
+          top: 80px;
+          transition: all .5s;
+          text-align: center;
+          background-color: #2c3e50;
+      }
+          nav ul li{
+              display: block;
+              margin: 50px 0;
+              line-height: 30px;
+          }
+              nav ul li a{
+                  font-size: 20px;
+              }
+                  a:hover{
+                      text-decoration: underline;
+                      color: red;
+                  }
+  
+          #check:checked ~ ul{
+              left: 0;
+          }
+  }
+  .form-control{
+      width: 300px;
+      
+  }
+  #con-2,h2{
+      text-align: center;
+      margin-top: 50px;
+  }
+  </style>
 {% endblock %}
