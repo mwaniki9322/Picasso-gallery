@@ -33,17 +33,22 @@ Technologies used to develop this application:
 
 
 ## Behaviour Driven Development(BDD)
-### 1. Displays Sign In Form
-* INPUT: Login Details
-* OUTPUT: Homepage.
+### 1. Displays Landing Page
+* INPUT: Choose Page
+* OUTPUT: Page Chosen.
 
-### 2. Sign Up If Not Logged In
-* INPUT: Sign Up Details
-* OUTPUT:Login Page. 
+### 2. Search Image
+* INPUT: Category
+* OUTPUT:Search Results. 
 
-### 3. Pitch Form
-* INPUT: Pitch Details
-* OUTPUT:Pitch 
+### 3. View Image Details
+* INPUT: Click Details
+* OUTPUT:Image Details
+
+### 4. Copy Image Link
+* INPUT: Copy Link
+* OUTPUT:Alert 'link copied'
+
 
 ## To Do
 * ADD CATEGORIES
