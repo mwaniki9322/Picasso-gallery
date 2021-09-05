@@ -9,6 +9,7 @@ urlpatterns=[
     path('',views.welcome,name='welcome'),
     path('images/',views.images,name='images'),
     path('search/',views.search_results,name='search_results'),
+    path('imagee/<int:image_id>/',views.image,name='imageid')
     
 ]
 if settings.DEBUG:
