@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -49,7 +50,7 @@
     <div class="col-sm-4 item">
         <a href="{{image.image.url}}" data-lightbox="photos"><img class="img-fluid" src="{{image.image.url}}"></a>
         <span>
-            <a href="/imagee/{{image.id}}">link</a>
+            <i class="fa fa-angle-double-right"><a href="/imagee/{{image.id}}">Link</a></i>
             </span>
     </div><br>
     {%endfor%}
